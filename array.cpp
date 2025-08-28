@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-
 int main(){
     // int arr[10]={1,2,2,3,4};
     // for(int i=0;i<5;i++){
@@ -70,19 +69,95 @@ int main(){
     // }
 
     //REVERSE
-    int arr[5]={1,2,3,4,5};
-    int first=0;
-    int last=4;
-    while(first<last){
-        swap(arr[first],arr[last]);
-        first++;
-        last--;
-    }
-    cout<<"reversed array:- \n";
-    for(int i=0;i<5;i++){
-        cout<<arr[i]<<" ";
-    }
+
+    // int arr[5]={1,2,3,4,5};
+    // int first=0;
+    // int last=4;
+    // while(first<last){
+    //     swap(arr[first],arr[last]);
+    //     first++;
+    //     last--;
+    // }
+    // cout<<"reversed array:- \n";
+    // for(int i=0;i<5;i++){
+    //     cout<<arr[i]<<" ";
+    // }
     
+    //MERGING TWO ARRAY
+
+    // int a[4]={1,2,6,10};
+    // int b[3]={4,5,7};
+    // int mer[7];
+    // int i=0,j=0,k=0;
+    // while(i<4 && j<3){
+    //     if(a[i]<=b[j]){
+    //         mer[k]=a[i];
+    //         i++;
+    //         k++;
+    //     }
+    //     else{
+    //         mer[k]=b[j];
+    //         j++;
+    //         k++;
+    //     }
+    // }
+    // while(i<4){
+    //     mer[k]=a[i];
+    //     i++;
+    //     k++;
+    // }
+    // while(j<3){
+    //     mer[k]=b[j];
+    //     j++;
+    //     k++;
+    // }
+    // for(int i=0;i<7;i++){
+    //     cout<<mer[i]<<" ";
+    // }
+
+    //UNION SET
+
+    int a[5]={1,2,5,6,7};
+    int b[6]={3,4,5,7,9,10};
+    int u[11];
+    int i=0,j=0,k=0;
+    int dup=0;
+    while(i<5 && j<6){
+        if(a[i]<b[j]){
+            u[k]=a[i];
+            i++;
+            k++;
+        }
+        else if(a[i]>b[j]){
+            u[k]=b[j];
+            j++;
+            k++;
+        }
+        else{
+            u[k]=a[i];
+            i++;
+            j++;
+            k++;
+            dup++;
+        }
+    }
+    while(i<5){
+        u[k]=a[i];
+        i++;
+        k++;
+    }
+    while(j<6){
+        u[k]=b[j];
+        j++;
+        k++;
+    }
+    for(int i=0;i<11-dup;i++){
+        cout<<u[i]<<" ";
+    }
+
+    //INTERSECTION
+    
+
 
     return 0;
 }
